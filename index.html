@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Política de Privacidade · YRA</title>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js" defer></script>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #0f1115;
+      --surface: #151922;
+      --surface-alt: #ffffff;
+      --primary: #39ff14;
+      --primary-soft: rgba(57, 255, 20, 0.1);
+      --text: #e6edf7;
+      --text-muted: #8b94a7;
+      --shadow: 0 24px 48px rgba(12, 18, 28, 0.35);
+      --radius: 18px;
+      --font: "Plus Jakarta Sans", "Segoe UI", Roboto, system-ui, -apple-system, sans-serif;
+      --transition: 250ms ease;
+    }
+
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #f9fbff;
+        --surface: #ffffff;
+        --surface-alt: #ffffff;
+        --text: #1b1f2e;
+        --text-muted: #4c5568;
+        --shadow: 0 16px 32px rgba(15, 17, 24, 0.08);
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: var(--font);
+      background: radial-gradient(circle at top, rgba(57, 255, 20, 0.08), transparent 55%),
+                  radial-gradient(circle at bottom right, rgba(0, 224, 255, 0.06), transparent 60%),
+                  var(--bg);
+      min-height: 100vh;
+      color: var(--text);
+      padding: clamp(24px, 4vw, 48px) clamp(16px, 8vw, 64px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    main {
+      width: min(960px, 100%);
+      background: var(--surface);
+      border-radius: var(--radius);
+      padding: clamp(32px, 5vw, 56px);
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(12px);
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: clamp(24px, 4vw, 48px);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: clamp(2rem, 4vw, 3rem);
+      color: var(--primary);
+      letter-spacing: -0.02em;
+    }
+
+    header p {
+      margin: 12px auto 0;
+      max-width: 580px;
+      color: var(--text-muted);
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: var(--primary-soft);
+      color: var(--primary);
+      font-weight: 600;
+      font-size: 0.8rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    section#content {
+      color: var(--text);
+      line-height: 1.75;
+      font-size: 1.05rem;
+    }
+
+    section#content h2,
+    section#content h3,
+    section#content h4 {
+      color: var(--primary);
+      margin-top: clamp(24px, 4vw, 36px);
+    }
+
+    section#content h2 {
+      font-size: clamp(1.6rem, 3vw, 2rem);
+    }
+
+    section#content h3 {
+      font-size: clamp(1.35rem, 2.5vw, 1.6rem);
+    }
+
+    section#content p,
+    section#content li {
+      color: var(--text-muted);
+    }
+
+    section#content a {
+      color: var(--primary);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color var(--transition);
+    }
+
+    section#content a:hover {
+      border-color: var(--primary);
+    }
+
+    section#content table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+      background: rgba(21, 34, 45, 0.6);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    section#content th,
+    section#content td {
+      padding: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      text-align: left;
+    }
+
+    section#content th {
+      background: rgba(0, 224, 255, 0.12);
+      color: var(--text);
+    }
+
+    .loading,
+    .error {
+      text-align: center;
+      padding: 60px 20px;
+      color: var(--text-muted);
+      font-size: 1.1rem;
+    }
+
+    .error strong {
+      display: block;
+      color: #ff5370;
+      margin-bottom: 12px;
+    }
+
+    footer {
+      margin-top: clamp(32px, 5vw, 64px);
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    footer a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <div class="badge">Documento oficial</div>
+      <h1>Política de Privacidade</h1>
+      <p>
+        Esta página apresenta a versão mais recente da política de privacidade do YRA · Your Workout Assistant.
+        O conteúdo é renderizado diretamente a partir do arquivo <code>PRIVACY_POLICY.md</code> armazenado no repositório.
+      </p>
+    </header>
+
+    <section id="content" class="loading">Carregando política...</section>
+
+    <footer>
+      <p>Última atualização sincronizada automaticamente a partir do repositório.</p>
+      <p><a href="PRIVACY_POLICY.md" download>Baixar versão em Markdown</a></p>
+    </footer>
+  </main>
+
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const container = document.getElementById('content');
+
+      fetch('PRIVACY_POLICY.md', { cache: 'no-cache' })
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error(`Erro ao carregar documento: ${response.status}`);
+          }
+          return response.text();
+        })
+        .then((markdown) => {
+          container.classList.remove('loading');
+          container.innerHTML = marked.parse(markdown, {
+            breaks: true,
+            gfm: true,
+          });
+        })
+        .catch((error) => {
+          console.error(error);
+          container.className = 'error';
+          container.innerHTML = `
+            <strong>Não foi possível carregar a política.</strong>
+            <span>Tente recarregar a página ou acesse o arquivo diretamente em <a href="PRIVACY_POLICY.md">PRIVACY_POLICY.md</a>.</span>
+          `;
+        });
+    });
+  </script>
+</body>
+</html>
